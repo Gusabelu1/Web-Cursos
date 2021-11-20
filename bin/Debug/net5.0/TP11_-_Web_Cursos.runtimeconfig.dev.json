@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\gusab\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gusab\\.nuget\\packages"
+    ]
+  }
+}

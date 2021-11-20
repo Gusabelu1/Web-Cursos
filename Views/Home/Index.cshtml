@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container">
+        <div class="row">
+            @{
+                foreach (Curso TempCurso in ViewBag.Cursos){
+                  <div class="col-md-3 m-3">
+                    <div class="card" style="width: 18rem;">
+                      <img src="@TempCurso.Imagen" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">@TempCurso.Nombre</h5>
+                        <p class="card-text">@TempCurso.Descripcion</p>
+                        <a href="#" class="btn btn-outline-primary">Ver Curso</a>
+                      </div>
+                    </div>
+                  </div>
+                }
+            }
+        </div>
+    </div>
+    
+</div>
