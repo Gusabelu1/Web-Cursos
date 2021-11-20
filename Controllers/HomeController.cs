@@ -20,7 +20,13 @@ namespace TP11___Web_Cursos.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.Cursos = BD.ListarCursos(-1);
+            /*
+                Titulo min: 15, max: 30 char
+                Desc min: 200, max: 250 char
+            */
+            
+            List<Curso> Cursos = BD.ListarCursos(-1);
+            ViewBag.Cursos = Cursos;
 
             return View();
         }

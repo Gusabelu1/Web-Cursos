@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H8HDDOO9i1jDWkzPpvAc6TSAFasMyopC9ZjJX99ft8tYz2cisKUMU408vvNzwY7MHlhNNk0kKO6P+jVGueYcnw==",
+  "dgSpecHash": "7W4VuVYoLwVxEI0mFMGu006802Lh79XxM2WAmaM9avWQ7FenWM0a+tnG59axDUvxd2hXMbB7UthWw20/x0UJrg==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\TP11_-_Web_Cursos.csproj",
+  "projectFilePath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\TP11_-_Web_Cursos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusab\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\gusab\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

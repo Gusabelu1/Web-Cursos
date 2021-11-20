@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\TP11_-_Web_Cursos.csproj": {}
+    "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\TP11_-_Web_Cursos.csproj": {}
   },
   "projects": {
-    "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\TP11_-_Web_Cursos.csproj": {
+    "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\TP11_-_Web_Cursos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\TP11_-_Web_Cursos.csproj",
+        "projectUniqueName": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\TP11_-_Web_Cursos.csproj",
         "projectName": "TP11_-_Web_Cursos",
-        "projectPath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\TP11_-_Web_Cursos.csproj",
+        "projectPath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\TP11_-_Web_Cursos.csproj",
         "packagesPath": "C:\\Users\\gusab\\.nuget\\packages\\",
-        "outputPath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11_-_Web_Cursos\\obj\\",
+        "outputPath": "D:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gusab\\AppData\\Roaming\\NuGet\\NuGet.Config",
