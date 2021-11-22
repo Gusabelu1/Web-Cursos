@@ -7,19 +7,11 @@ for details on configuring this project to bundle and minify static web assets. 
 :root{
   --Hover: #7C7C7C;
 
-  /* Oscuro */
-  --FuenteOscuroColor: #EEE;
-
-  --FondoOscuroColor: #1F2123;
-  --CardOscuroColor: #343A40;
-  --BotonOscuroColor: #F8F9FA;
-
-  /* Claro */
-  --FuenteClaroColor: rgba(0, 0, 0, 0.9);
-
-  --FondoClaroColor: #F9F9F9;
-  --CardClaroColor: #F8F9FA;
-  --BotonClaroColor: #343A40;
+  --Fuente: rgba(0, 0, 0, 0.9);
+  --Fondo: #F9F9F9;
+  --Card: #F8F9FA;
+  --Boton: #343A40;
+  --Borde: rgba(0, 0, 0, .15)
 }
 
 .dropdown-toggle:hover {
@@ -27,11 +19,13 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card {
-  transition: 0.3s
+  transition: 0.3s;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.15);
 }
 
 .card:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  transform: translate3d(-10px, -10px, 10px);
 }
 
 .btn{
@@ -153,9 +147,6 @@ body {
 .dropdown-menu {
   transition: 1s;
 }
-.navbar .dropdown-menu a:hover {
-  color: #616161 !important;
-}
 .darken-grey-text {
   color: #2E2E2E;
 }
@@ -164,66 +155,91 @@ body {
 
 
 /* Modo Claro */
+body {
+  background: var(--Fondo);
+}
 
 nav a{
-  color: var(--FuenteClaroColor);
+  color: var(--Fuente) !important;
   transition: 0.2s;
 }
 nav a:hover{
   color: var(--Hover) !important;
 }
 
-body {
-  background: var(--FondoClaroColor);
+button:focus{
+  outline: 0;
+}
+
+.navbar-toggler {
+  border-color: var(--Borde);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .btn-outline {
-  color: var(--BotonClaroColor);
-  border-color: var(--BotonClaroColor);
+  color: var(--Boton);
+  border-color: var(--Boton);
 }
 .btn-outline:hover {
-  color: var(--FuenteOscuroColor);
-  background-color: var(--BotonClaroColor);
+  color: var(--Fondo);
+  background-color: var(--Boton);
+}
+
+.dropdown-item {
+  color: var(--Fuente) !important;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+  color: var(--Fuente) !important;
+  background-color: var(--Hover) !important;
+}
+.dropdown-item:active {
+  background-color: transparent;
+}
+
+.dropdown-menu {
+  background-color: var(--Fondo);
+  border: 1px solid var(--Borde);
+  padding: 0;
 }
 
 .card {
-  background-color: var(--CardClaroColor);
-  color: var(--FuenteClaroColor);
+  background-color: var(--Card);
+  color: var(--Fuente);
+}
+
+.fuente {
+  color: var(--Fuente);
 }
 
 /* Modo Claro */
 /* Modo Oscuro */
 
 @media (prefers-color-scheme: dark) {
-  body {
-    color: var(--FuenteOscuroColor);
-    background: var(--FondoOscuroColor);
+  :root{
+    --Fuente: #EEE;
+
+    --Fondo: #1F2123;
+    --Card: #343A40;
+    --Boton: #F8F9FA;
+    --Borde: rgba(255, 255, 255, .15);
   }
-  nav a{
-    color: #fff;
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
-  .btn-outline {
-    color: var(--BotonOscuroColor);
-    border-color: var(--BotonOscuroColor);
-  }
-  .btn-outline:hover {
-    color: var(--FuenteClaroColor);
-    background-color: var(--BotonOscuroColor);
-  }
-  .card {
-    background-color: var(--CardOscuroColor);
-    color: var(--FuenteOscuroColor);
+  .card{
     border: 0;
-  }
-  .dropdown-menu {
-    background-color: var(--CardOscuroColor);
-  }
-  .dropdown-item {
-    color: var(--FuenteOscuroColor);
-  }
-  img {
-    filter: brightness(.9) contrast(1.1);
   }
 }
 
 /* Modo Oscuro */
+
+@media(max-width: 576px){
+  .card {
+    box-shadow: none;
+  }
+  .card:hover {
+    transform: scale(1.025);
+  }
+}

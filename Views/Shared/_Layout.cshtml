@@ -1,35 +1,39 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TP11___Web_Cursos</title>
+    <title>@ViewData["Title"] - uflow</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="icon" href="~/uflow-oscuro.png" id="icono-oscuro"/>
+    <link rel="icon" href="~/uflow-claro.png" id="icono-claro"/>
 </head>
 <body>
     <header>
         <nav class="mb-4 navbar navbar-expand-lg">
-            <a class="navbar-brand" href="#" style="font-family: 'Averia Libre', cursive;"><i class="fa-solid fa-books"></i> uflow</a>
+            <a class="navbar-brand" href="@Url.Action("Index","Home")" style="font-family: 'Averia Libre', cursive;"><i class="fa-solid fa-books"></i> uflow</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-house-blank"></i> Inicio</span></a>
+                        <a class="nav-link" href="@Url.Action("Index","Home")"><i class="fa-solid fa-house-blank"></i> Inicio</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-video-plus"></i> Nuevo Curso</a>
+                        <a class="nav-link" href="@Url.Action("AgregarCurso","Home")"><i class="fa-solid fa-video-plus"></i> Nuevo Curso</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-filter-list"></i> Especialidades </a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-filter-list"></i> Filtros </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-language"></i> Lenguajes</a>
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-compass-drafting"></i> Progamas de Diseño</a>
-                            <a class="dropdown-item" href="#"><i class="fa-solid fa-presentation-screen"></i> Metodologías</a>
+                            <a class="dropdown-item" href="@Url.Action("FiltrarEspecialidad","Home", new { IdEspecialidad = 1 })"><i class="fa-solid fa-language"></i> Lenguajes</a>
+                            <a class="dropdown-item" href="@Url.Action("FiltrarEspecialidad","Home", new { IdEspecialidad = 2 })"><i class="fa-solid fa-compass-drafting"></i> Progamas de Diseño</a>
+                            <a class="dropdown-item" href="@Url.Action("FiltrarEspecialidad","Home", new { IdEspecialidad = 3 })"><i class="fa-solid fa-presentation-screen"></i> Metodologías</a>
+                            <div class="container"><div class="border-bottom"></div></div>
+                            <a class="dropdown-item" href="@Url.Action("FiltrarEspecialidad","Home", new { IdEspecialidad = -1 })"><i class="fa-solid fa-filter-circle-xmark"></i> Borrar Filtros</a>
                         </div>
                     </li>
                 </ul>
@@ -44,7 +48,9 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Realizado por Facundo Vilamowski y Santino Castro</a>
+            <p>
+                &copy; 2021 - Facundo Vilamowski y Santino Castro
+            </p>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

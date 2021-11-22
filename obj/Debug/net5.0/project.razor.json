@@ -14402,6 +14402,11 @@
   "RootNamespace": "TP11___Web_Cursos",
   "Documents": [
     {
+      "FilePath": "d:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\Views\\Home\\AgregarCurso.cshtml",
+      "TargetPath": "Views\\Home\\AgregarCurso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\OneDrive\\ORT\\2021\\Programacion\\TP11 - Web Cursos\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

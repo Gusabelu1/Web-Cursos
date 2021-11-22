@@ -137,3 +137,4 @@ D:\OneDrive\ORT\2021\Programacion\TP11 - Web Cursos\obj\Debug\net5.0\TP11_-_Web_
 D:\OneDrive\ORT\2021\Programacion\TP11 - Web Cursos\obj\Debug\net5.0\ref\TP11_-_Web_Cursos.dll
 D:\OneDrive\ORT\2021\Programacion\TP11 - Web Cursos\obj\Debug\net5.0\TP11_-_Web_Cursos.pdb
 D:\OneDrive\ORT\2021\Programacion\TP11 - Web Cursos\obj\Debug\net5.0\TP11_-_Web_Cursos.genruntimeconfig.cache
+D:\OneDrive\ORT\2021\Programacion\TP11 - Web Cursos\obj\Debug\net5.0\Razor\Views\Home\AgregarCurso.cshtml.g.cs

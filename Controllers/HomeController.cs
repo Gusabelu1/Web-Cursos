@@ -31,6 +31,13 @@ namespace TP11___Web_Cursos.Controllers
             return View();
         }
 
+        public IActionResult FiltrarEspecialidad(int IdEspecialidad){
+            List<Curso> Cursos = BD.ListarCursos(IdEspecialidad);
+            ViewBag.Cursos = Cursos;
+
+            return View("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
