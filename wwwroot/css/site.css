@@ -1,15 +1,48 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+﻿/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:wght@700&display=swap');
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+
+:root{
+  --Hover: #7C7C7C;
+
+  /* Oscuro */
+  --FuenteOscuroColor: #EEE;
+
+  --FondoOscuroColor: #1F2123;
+  --CardOscuroColor: #343A40;
+  --BotonOscuroColor: #F8F9FA;
+
+  /* Claro */
+  --FuenteClaroColor: rgba(0, 0, 0, 0.9);
+
+  --FondoClaroColor: #F9F9F9;
+  --CardClaroColor: #F8F9FA;
+  --BotonClaroColor: #343A40;
+}
+
+.dropdown-toggle:hover {
+  cursor: pointer;
+}
+
+.card {
+  transition: 0.3s
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.btn{
+  transition: 0.3s;
+  border-radius: 8px;
+}
 
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
 }
 
 .btn-primary {
@@ -22,6 +55,10 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+#title > path {
+  fill: #fff;
 }
 
 /* Sticky footer styles
@@ -61,6 +98,8 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-family: 'Quicksand', cursive;
+  transition: 0.3s;
 }
 .footer {
   position: absolute;
@@ -107,3 +146,84 @@ body {
 .rating .hover > input:not(:checked) ~ label:hover, .rating .hover > input:not(:checked) ~ label:hover ~ label {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
 }
+
+.hm-gradient {
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.dropdown-menu {
+  transition: 1s;
+}
+.navbar .dropdown-menu a:hover {
+  color: #616161 !important;
+}
+.darken-grey-text {
+  color: #2E2E2E;
+}
+
+/* Sistema de votos con Estrellas */
+
+
+/* Modo Claro */
+
+nav a{
+  color: var(--FuenteClaroColor);
+  transition: 0.2s;
+}
+nav a:hover{
+  color: var(--Hover) !important;
+}
+
+body {
+  background: var(--FondoClaroColor);
+}
+
+.btn-outline {
+  color: var(--BotonClaroColor);
+  border-color: var(--BotonClaroColor);
+}
+.btn-outline:hover {
+  color: var(--FuenteOscuroColor);
+  background-color: var(--BotonClaroColor);
+}
+
+.card {
+  background-color: var(--CardClaroColor);
+  color: var(--FuenteClaroColor);
+}
+
+/* Modo Claro */
+/* Modo Oscuro */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--FuenteOscuroColor);
+    background: var(--FondoOscuroColor);
+  }
+  nav a{
+    color: #fff;
+  }
+  .btn-outline {
+    color: var(--BotonOscuroColor);
+    border-color: var(--BotonOscuroColor);
+  }
+  .btn-outline:hover {
+    color: var(--FuenteClaroColor);
+    background-color: var(--BotonOscuroColor);
+  }
+  .card {
+    background-color: var(--CardOscuroColor);
+    color: var(--FuenteOscuroColor);
+    border: 0;
+  }
+  .dropdown-menu {
+    background-color: var(--CardOscuroColor);
+  }
+  .dropdown-item {
+    color: var(--FuenteOscuroColor);
+  }
+  img {
+    filter: brightness(.9) contrast(1.1);
+  }
+}
+
+/* Modo Oscuro */

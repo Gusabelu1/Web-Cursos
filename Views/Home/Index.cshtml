@@ -1,9 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="text-center">
+  <h1 class="display-4" style="font-family: 'Averia Libre', cursive;">uflow</h1>
+  <p>Aprender online nunca fue tan facil</p>
+</div>
 
-<h1 class="display-4">Welcome</h1>
-<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 <div class="card-deck">
   @foreach (Curso TempCurso in ViewBag.Cursos){
     double PromedioEstrellas =  Math.Round((double)@TempCurso.AcumuladorEstrellas / (double)@TempCurso.CantidadVotos);
@@ -82,7 +84,7 @@
           </form>
         </div>
         <p style="font-size: 11px;">(@TempCurso.CantidadVotos Votos)</p>
-        <a href="#" class="btn btn-outline-primary">Ver Curso</a>
+        <a href="#" class="btn btn-outline">Ver Curso</a>
       </div>
     </div>
   }

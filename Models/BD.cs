@@ -11,6 +11,7 @@ namespace TP11___Web_Cursos.Models
     {
         private static string _connectionString = @"Server=GUSABELU1\SQLEXPRESS;DataBase=BDWebCursos;Trusted_Connection=True;";
         private static List<Curso> _listaCursos = new List<Curso>();
+        private static List<Especialidad> _listaEspecialidades = new List<Especialidad>();
 
         public static Curso ConsultaCurso(int IdCurso){
             Curso TempCurso = null;
@@ -38,21 +39,20 @@ namespace TP11___Web_Cursos.Models
                 }   
             }
             else{
-                /*string sql = "SELECT * FROM Cursos WHERE IdEspecialidad = @pEspecialidad";
+                string sql = "SELECT * FROM Cursos WHERE IdEspecialidad = @pEspecialidad";
                 using(SqlConnection db = new SqlConnection(_connectionString)){
-                    _listaCursos = db.QueryFirstOrDefault<Curso>(sql, new{ pEspecialidad = IdEspecialidad });
-                }*/
+                    _listaCursos = db.Query<Curso>(sql, new{ pEspecialidad = IdEspecialidad }).ToList();
+                }
             }
             return _listaCursos;
         }
 
-        public static Especialidad ListarEspecialidades(){
-            Especialidad TempEspecialidad = null;
+        public static List<Especialidad> ListarEspecialidades(){
             string sql = "SELECT * FROM Especialidades";
             using(SqlConnection db = new SqlConnection(_connectionString)){
-                TempEspecialidad = db.QueryFirstOrDefault<Especialidad>(sql);
+                _listaEspecialidades = db.Query<Especialidad>(sql).ToList();
             }
-            return TempEspecialidad;
+            return _listaEspecialidades;
         }
 
         public static void AgregarCurso(Curso TempCurso){
