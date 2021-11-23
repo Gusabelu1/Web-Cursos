@@ -161,7 +161,7 @@ body {
 
 nav a{
   color: var(--Fuente) !important;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 nav a:hover{
   color: var(--Hover) !important;
@@ -197,16 +197,19 @@ button:focus{
 .dropdown-item:active {
   background-color: transparent;
 }
-
 .dropdown-menu {
-  background-color: var(--Fondo);
+  background-color: var(--Card);
   border: 1px solid var(--Borde);
   padding: 0;
+}
+.nav-item, .dropdown > div {
+  transition: 0.3s;
 }
 
 .card {
   background-color: var(--Card);
   color: var(--Fuente);
+  padding: 0;
 }
 
 .fuente {
