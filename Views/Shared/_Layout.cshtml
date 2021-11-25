@@ -15,6 +15,18 @@
     <header>
         <nav class="mb-4 navbar navbar-expand-lg">
             <a class="navbar-brand" href="@Url.Action("Index","Home")" style="font-family: 'Averia Libre', cursive;"><i class="fa-solid fa-books"></i> uflow</a>
+            <label class="oscuro">
+                <input class='toggle-checkbox' id="modoOscuro-checkbox" type='checkbox' onclick="modoOscuro()">
+                <div class='toggle-slot'>
+                    <div class='sun-icon-wrapper'>
+                        <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                    </div>
+                    <div class='toggle-button'></div>
+                    <div class='moon-icon-wrapper'>
+                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                    </div>
+                </div>
+            </label>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,9 +65,13 @@
             </p>
         </div>
     </footer>
+
+    <a id="subir" href="#" class="btn btn-primary btn-lg" role="button" title="Volver al inicio de la página" data-toggle="tooltip" data-placement="left"><i class="fa fa-arrow-up"></i></a>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -3,5 +3,55 @@
 }
 <div class="text-center">
   <h1 class="display-4 fuente" style="font-family: 'Averia Libre', cursive;">uflow</h1>
-  <p class="fuente">Aprender online nunca fue tan facil</p>
+  <p class="fuente">Aprender online nunca fue tan fácil</p>
+</div>
+
+<div class="card card-outline-secondary mb-3 mb-md-0">
+  <div class="card-header text-center">
+    <h3 class="mb-0">Crear Nuevo Curso</h3>
+  </div>
+  <div class="card-body">
+    <form autocomplete="on" class="form" role="form" method="post" action='@Url.Action("CursoAgregado", "Home")'>
+      <fieldset>
+        <label class="mb-0" for="nombre">Nombre del Curso <span class="obligatorio">*</span></label>
+        <div class="row mb-2">
+          <div class="col-lg-12">
+            <input class="form-control" id="nombre" name="Nombre" required="" type="text" maxlength="30" minlength="15" placeholder="(Maximo 30 carácteres)">
+          </div>
+        </div>
+        <label class="mb-0" for="descripcion">Descripción <span class="obligatorio">*</span></label>
+        <div class="row mb-2">
+          <div class="col-lg-12">
+            <textarea class="form-control" id="descripcion" name="Descripcion" required="" rows="6" maxlength="250" minlength="200" placeholder="(Máximo 250 carácteres)"></textarea>
+          </div>
+        </div>
+        <label class="mb-0" for="imagen">Url de la Imagen de Portada <span class="obligatorio">*</span></label>
+        <div class="row mb-2">
+          <div class="col-lg-12">
+            <input class="form-control" id="imagen" name="Imagen" type="url" placeholder="(Link)">
+          </div>
+        </div>
+        <label class="mb-0" for="nombre">Url del Video <span class="obligatorio">*</span></label>
+        <div class="row mb-2">
+          <div class="col-lg-12">
+            <input class="form-control" id="nombre" name="UrlCurso" required="" type="text" placeholder="(Embed)">
+          </div>
+        </div>
+        <label class="mb-0" for="especialidad">Especialidad del Curso <span class="obligatorio">*</span></label>
+        <div class="row mb-5">
+          <div class="col-lg-3">
+            <select class="form-control custom-select" id="especialidad" name="IdEspecialidad" required="" type="select" placeholder="(Embed)">
+              <option value=null disabled selected>Elija una Especialidad</option>
+              @{
+                foreach(Especialidad TempEspecialidad in ViewBag.Especialidades){
+                  <option value="@TempEspecialidad.IdEspecialidad">@TempEspecialidad.Nombre</option>
+                }
+              }
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-lg float-right" type="submit">Crear Curso</button>
+      </fieldset>
+    </form>
+  </div>
 </div>

@@ -86,7 +86,7 @@ namespace TP11___Web_Cursos.Models
             }
         }
 
-        public Curso(int IdCurso, string Nombre, string Descripcion, string Imagen, string UrlCurso, int CantidadVotos, int AcumuladorEstrellas, int IdEspecialidad){
+        public Curso(int IdCurso, string Nombre, string Descripcion, string Imagen, string UrlCurso, int CantidadVotos, int AcumuladorEstrellas, int IdEspecialidad) {
             _IdCurso = IdCurso;
             _Nombre = Nombre;
             _Descripcion = Descripcion;

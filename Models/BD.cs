@@ -56,9 +56,9 @@ namespace TP11___Web_Cursos.Models
         }
 
         public static void AgregarCurso(Curso TempCurso){
-            string sql = "INSERT INTO Cursos (IdCurso = @pCurso, Nombre = @pNombre, Descripcion = @pDescripcion, Imagen = @pImagen, UrlCurso = @pUrlCurso, IdEspecialidad = @pIdEspecialidad)";
+            string sql = "INSERT INTO Cursos VALUES (@pNombre, @pDescripcion, @pImagen, @pUrlCurso, 0, 0, @pIdEspecialidad)";
             using(SqlConnection db = new SqlConnection(_connectionString)){
-                db.Execute(sql, new{ pCurso = TempCurso.IdCurso, pNombre = TempCurso.Nombre, pDescripcion = TempCurso.Descripcion, pImagen = TempCurso.Imagen, pUrlCurso = TempCurso.UrlCurso, pIdEspecialidad = TempCurso.IdEspecialidad });
+                db.Execute(sql, new{ pNombre = TempCurso.Nombre, pDescripcion = TempCurso.Descripcion, pImagen = TempCurso.Imagen, pUrlCurso = TempCurso.UrlCurso, pIdEspecialidad = TempCurso.IdEspecialidad });
             }
         }
 

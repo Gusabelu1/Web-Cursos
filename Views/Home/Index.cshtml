@@ -6,10 +6,16 @@
   <p class="fuente">Aprender online nunca fue tan fácil</p>
 </div>
 
+<div class="container">
 <div class="text-center card-deck">
+  @{ int i = 0; }
   @foreach (Curso TempCurso in ViewBag.Cursos){
+    if (i == 3){
+      <div class="w-100 d-none d-block d-none"></div>
+      i = 0;
+    }
     double PromedioEstrellas =  Math.Round((double)@TempCurso.AcumuladorEstrellas / (double)@TempCurso.CantidadVotos);
-    <div class="card mb-3 col-md-4">
+    <div class="card mb-3">
       @if(@TempCurso.Imagen == null){
         <svg class="bd-placeholder-img card-img-top" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="33%" y="50%" fill="#dee2e6" dy=".3em">No se encontro una imágen</text></svg>
       }
@@ -81,11 +87,25 @@
               <input type="radio" name="rating" id="rating-1" value="1" checked disabled>
               <label for="rating-1"></label>
             }
+            else {
+              <input type="radio" name="rating" id="rating-5" value="5" disabled>
+              <label for="rating-5"></label>
+              <input type="radio" name="rating" id="rating-4" value="4" disabled>
+              <label for="rating-4"></label>
+              <input type="radio" name="rating" id="rating-3" value="3" disabled>
+              <label for="rating-3"></label>
+              <input type="radio" name="rating" id="rating-2" value="2" disabled>
+              <label for="rating-2"></label>
+              <input type="radio" name="rating" id="rating-1" value="1" disabled>
+              <label for="rating-1"></label>
+            }
           </form>
         </div>
         <p style="font-size: 11px;">(@TempCurso.CantidadVotos Votos)</p>
         <a href="#" class="btn btn-outline">Ver Curso</a>
       </div>
     </div>
+    i++;
   }
+</div>
 </div>

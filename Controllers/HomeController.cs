@@ -20,11 +20,6 @@ namespace TP11___Web_Cursos.Controllers
 
         public IActionResult Index()
         {
-            /*
-                Titulo min: 15, max: 30 char
-                Desc min: 200, max: 250 char
-            */
-            
             List<Curso> Cursos = BD.ListarCursos(-1);
             ViewBag.Cursos = Cursos;
 
@@ -36,6 +31,23 @@ namespace TP11___Web_Cursos.Controllers
             ViewBag.Cursos = Cursos;
 
             return View("Index");
+        }
+
+        public IActionResult AgregarCurso()
+        {
+            List<Especialidad> Especialidades = BD.ListarEspecialidades();
+            ViewBag.Especialidades = Especialidades;
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CursoAgregado(string Nombre, string Descripcion, string Imagen, string UrlCurso, int IdEspecialidad)
+        {
+            Curso NuevoCurso = new Curso (0, Nombre, Descripcion, Imagen, UrlCurso, 0, 0, IdEspecialidad);
+            BD.AgregarCurso(NuevoCurso);
+
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

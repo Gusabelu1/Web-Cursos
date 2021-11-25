@@ -7,15 +7,27 @@ for details on configuring this project to bundle and minify static web assets. 
 :root{
   --Hover: #7C7C7C;
 
-  --Fuente: rgba(0, 0, 0, 0.9);
+  --Fuente: #000;
   --Fondo: #F9F9F9;
   --Card: #F8F9FA;
   --Boton: #343A40;
   --Borde: rgba(0, 0, 0, .15)
 }
 
+#subir {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
 .dropdown-toggle:hover {
   cursor: pointer;
+}
+
+.obligatorio {
+  color: red;
 }
 
 .card {
@@ -64,6 +76,10 @@ html {
   html {
     font-size: 16px;
   }
+}
+
+label{
+  margin: 0;
 }
 
 .border-top {
@@ -216,10 +232,16 @@ button:focus{
   color: var(--Fuente);
 }
 
+input, textarea, select {
+  background-color: var(--Fondo) !important;
+  color: var(--Fuente) !important;
+  border: 1px solid var(--Borde) !important;
+}
+
 /* Modo Claro */
 /* Modo Oscuro */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root{
     --Fuente: #EEE;
 
@@ -234,7 +256,7 @@ button:focus{
   .card{
     border: 0;
   }
-}
+} */
 
 /* Modo Oscuro */
 
@@ -246,3 +268,99 @@ button:focus{
     transform: scale(1.025);
   }
 }
+
+.oscuro:hover {
+  cursor: pointer;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  position: relative;
+  height: 1.25em;
+  width: 2.5em;
+  border: 2.5px solid #e4e7ec;
+  border-radius: 10em;
+  background-color: white;
+  transition: background-color 250ms;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #374151;
+}
+
+.toggle-button {
+  transform: translate(.1em, .075em);
+  position: absolute;
+  height: .75em;
+  width: .75em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 1.25px #ffbb52;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,1.75,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 1.25px white;
+  transform: translate(1.25em, .075em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: .75em;
+  width: .75em;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: .75em;
+  width: .75em;
+  opacity: 1;
+  transform: translate(1.25em, .06em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(.25em, .06em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: .75em;
+  width: .75em;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: .75em;
+  width: .75em;
+  opacity: 0;
+  transform: translate(1.25em, .06em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,1.75,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(.1em, .06em) rotate(-15deg);
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: transparent; height: 0; }
+::-webkit-scrollbar-track {  background-color: var(--Card);}
+::-webkit-scrollbar-track-piece { background-color: transparent;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: var(--Card);}
+::-webkit-resizer { background-color: #666;}
